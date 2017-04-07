@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<!-- top b-->
+<div class="top w">
+    <ul class="fl left">
+        <li class="logo fl"><a href="#"></a></li>
+        <li class="game fl" id="game">
+            <a href="#">游戏</a>
+            <i class="iconx"></i>
+            <ul class="xuanze" id="xiaotu">
+                <li class="one"><a href="#"><i></i>《魔兽世界®》</a></li>
+                <li class="one"><a href="#"><i></i>《暗黑破坏神®III》</a></li>
+                <li class="two"><a href="#"><i></i>《星际争霸®II》</a></li>
+                <li class="three"><a href="#"><i></i>《炉石传说®》</a></li>
+                <li class="three"><a href="#"><i></i>《风暴英雄™》</a></li>
+                <li class="four1"><a href="#"><i></i>《守望先锋™》</a></li>
+            </ul>
+        </li>
+        <li class="market fl">商城</li>
+    </ul>
+    <ul class="fr right">
+        <li class="fl"><a href="#">支持</a></li>
+        <li class="fl">
+            <a href="#">您的通行证</a>
+            <i class="iconx"></i>
+
+            <div></div>
+        </li>
+    </ul>
+</div>
+<script>
+    var ull = document.getElementById("xiaotu");
+    var game = document.getElementById("game");
+    var iss = ull.getElementsByTagName("i");
+    for (var i = 0; i < iss.length; i++) {
+        iss[i].style.background = "url('img/game-icons-70-fb0e2d3864.png') no-repeat -" + i * 70 + "px 0"
+//        console.log(iss[i].style.background);
+    }
+    game.onclick = function () {
+        if (game.style.overflow == "visible") {
+            game.style.overflow = "hidden";
+        } else {
+            game.style.overflow = "visible";
+        }
+
+    }
+</script>
+<!-- top e-->
+<div class="top2">
+    <div class="top22 w">
+        <i></i> <span>商城</span>
+    </div>
+</div>
+<!-- lubbo b-->
+<div class="lun clearfix" id="lun">
+    <ul>
+        <li class="ull1"><a href="#"><img src="img/01.jpg" alt=""/></a></li>
+        <li class="ull2"><a href="#"><img src="img/02.jpg" alt=""/></a></li>
+        <li class="ull3"><a href="#"><img src="img/03.jpg" alt=""/></a></li>
+        <li class="ull4"><a href="#"><img src="img/04.jpg" alt=""/></a></li>
+        <li class="ull5"><a href="#"><img src="img/05.jpg" alt=""/></a></li>
+        <li class="ull6"><a href="#"><img src="img/06.jpg" alt=""/></a></li>
+        <li class="ull7"><a href="#"><img src="img/07.jpg" alt=""/></a></li>
+    </ul>
+    <div class="arrow w" id="arrow">
+        <div class="left" id="aleft"><i></i></div>
+        <div class="right" id="aright"><i></i></div>
+    </div>
+</div>
+<script>
+    var arrow = document.getElementById("arrow");
+    var aleft = document.getElementById("aleft");
+    var aright = document.getElementById("aright");
+    var lun = document.getElementById("lun");
+    var lul = lun.children[0];
+    var llis = lul.children;
+    var zarr = [0, 1, 2, 3, 4, 5, 6];
+    var timer = null;
+    lun.onmouseover = function () {
+        arrow.style.display = "block";
+        clearInterval(timer);
+    };
+    lun.onmouseout = function () {
+        arrow.style.display = "none";
+        timer = setInterval(function () {
+            aleft.onclick();
+        }, 5000);
+    };
+    for (var i = 0; i < llis.length; i++) {
+        llis[i].style.zIndex = zarr[i];
+    }
+    aleft.onclick = function () {
+        for (var i = 0; i < llis.length; i++) {
+            if (zarr[i] == 6) {
+                animate(llis[i], {"opacity": 0}, function () {
+                    zarr.push(zarr.shift());
+                    for (var i = 0; i < llis.length; i++) {
+                        llis[i].style.zIndex = zarr[i];
+                        llis[i].style.opacity = 1;
+                    }
+                });
+            }
+        }
+    };
+    aright.onclick = function () {
+        for (var i = 0; i < llis.length; i++) {
+            if (zarr[i] == 0) {
+                llis[i].style.zIndex = 5;
+            }
+            if (zarr[i] == 5) {
+                llis[i].style.zIndex = 0;
+            }
+            if (zarr[i] == 6) {
+                animate(llis[i], {"opacity": 0}, function () {
+                    zarr.unshift(zarr.pop());
+                    for (var i = 0; i < llis.length; i++) {
+                        llis[i].style.zIndex = zarr[i];
+                        llis[i].style.opacity = 1;
+                    }
+                })
+            }
+        }
+    };
+    timer = setInterval(function () {
+        aleft.onclick();
+    }, 5000);
+    function animate(obj, json, fn) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var flag = true;
+            for (var k in json) {
+                if (k === "opacity") {//opacity要特殊处理
+                    //opacity没有单位 参与运算自动转换成数值 所以不用parsetInt
+                    //取值范围 0-1 0.1 0.33 33 为了让以前的计算公式生效 要扩大100倍
+                    var leader = getStyle(obj, k) * 100;
+                    var target = json[k] * 100;
+                    var step = (target - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader / 100;//opacity没有单位
+                } else if (k === "zIndex") {
+                    obj.style.zIndex = json[k];//层级不需要渐变 直接设置即可
+                } else {
+                    var leader = parseInt(getStyle(obj, k)) || 0;
+                    var target = json[k];
+                    var step = (target - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader + "px";
+                }
+                if (leader != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(obj.timer);
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 25);
+    }
+    //全部属性都到达目标值才能清空
+    function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj, null)[attr];
+        } else {
+            return obj.currentStyle[attr];
+        }
+    }
+</script>
+<!-- lunb  e-->
+<!-- content b-->
+<div class="content w clearfix">
+    <div class="gtypes fl">
+        <ul id="gtypess">
+            <li><a href="#"><i></i>《魔兽世界》&nbsp;&nbsp;<span>( 40 )</span></a></li>
+            <li><a href="#"><i></i>《守望先锋™》 &nbsp;&nbsp;<span>( 3 )</span></a></li>
+            <li><a href="#"><i></i>《暗黑破坏神III》 &nbsp;&nbsp;<span>( 2 )</span></a></li>
+            <li><a href="#"><i></i>《星际争霸II》 &nbsp;&nbsp;<span>( 12 )</span></a></li>
+            <li><a href="#"><i></i>《炉石传说》 &nbsp;&nbsp;<span>( 12 )</span></a></li>
+            <li><a href="#"><i></i>《风暴英雄》 &nbsp;&nbsp;<span>( 1 )</span></a></li>
+            <li><a href="#"><i></i> 战网 &nbsp;&nbsp;<span>( 2 )</span></a></li>
+        </ul>
+        <ol>
+            <li><a href="#">战网点数</a></li>
+            <li><a href="#">游戏</a></li>
+            <li><a href="#">可解锁内容</a></li>
+            <li><a href="#">游戏服务</a></li>
+            <li><a href="#">使用兑换码 <i></i></a></li>
+        </ol>
+    </div>
+    <div class="props fr">
+        <ul id="props">
+            <li><a href="#">
+                <img src="img/p1.jpg" alt="龙争虎斗加基森"/>
+
+                <div>
+                    <p>龙争虎斗加基森</p>
+                    <span class="wowblue">¥18起</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p2.jpg" alt=""/>
+
+                <div>
+                    <p> 《魔兽世界®：军团再临》： <br/>
+                        典藏礼包</p>
+                    <span class="wowblue">¥240</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p3.jpg" alt=""/>
+
+                <div>
+                    <p>淘气包</p>
+                    <span class="wowblue">¥45</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p4.jpg" alt="春节补给"/>
+
+                <div>
+                    <p>春节补给</p>
+                    <span class="wowblue">¥12起</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p5.jpg" alt="《魔兽世界®》"/>
+
+                <div>
+                    <p>《魔兽世界®》</p>
+                    <span class="wowblue">¥75起</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p6.jpg" alt="《暗黑破坏神®III》"/>
+
+                <div>
+                    <p>《暗黑破坏神®III》</p>
+                    <span class="wowblue">了解详情</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p7.jpg" alt="卡拉赞之夜"/>
+
+                <div>
+                    <p>卡拉赞之夜</p>
+                    <span class="wowblue">¥128</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p8.jpg" alt="《守望先锋》数字畅玩版"/>
+
+                <div>
+                    <p>《守望先锋》数字畅玩版</p>
+                    <span class="wowblue">¥198</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p9.jpg" alt="《暗黑破坏神®III》: 《夺魂之镰™》无限畅玩包"/>
+
+                <div>
+                    <p>《暗黑破坏神®III》: <br/>《夺魂之镰™》无限畅玩包</p>
+                    <span class="wowblue">¥198起</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p10.jpg" alt="《守望先锋》数字典藏版"/>
+
+                <div>
+                    <p>《守望先锋》数字典藏版</p>
+                    <span class="wowblue">¥328</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p11.jpg" alt=" 星际争霸® II："/>
+
+                <div>
+                    <p> 星际争霸® II：<br/>
+                        虚空之遗™</p>
+                    <span class="wowblue">¥128起</span>
+                </div>
+            </a></li>
+            <li><a href="#">
+                <img src="img/p12.jpg" alt="角色直升100级"/>
+
+                <div>
+                    <p>角色直升100级</p>
+                    <span class="wowblue">了解详情</span>
+                </div>
+            </a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var gtypess = document.getElementById("gtypess");
+    var props = document.getElementById("props");
+    var glis = gtypess.getElementsByTagName("i");
+    var plis = props.getElementsByTagName("i");
+    for (var i = 0; i < glis.length; i++) {
+        glis[i].style.background = "url('img/sprite-sidebar-595341f758.png') no-repeat -" + i * 45 + "px 0"
+    }
+</script>
+<!-- content e-->
+<!-- foot b-->
+<div class="footer w">
+    <div class="fttop">
+        <i class="ftt1"></i><a href="#">支持</a>
+        <i class="ftt2"></i><a href="#">反馈</a>
+        <i class="ftt3"></i><a href="#">战网安全中心</a>
+    </div>
+    <div class="ftcen fl"><a href="#"><img src="img/blizzard.png" alt=""/></a></div>
+    <div class="ftft fl">
+        <p class="ftft1">
+            <a href="#">查找职位</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="#">关于</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="#">隐私</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="#">法律条款</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="#">API</a>
+        </p>
+
+        <p class="ftft2">
+            <a href="#">沪网文[2014]0731-161号</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="#">增值电信业务经营许可证编号：沪B2－20080012</a>
+        </p>
+
+        <p class="ftft3">
+            互联网违法和不良信息举报电话：0571-28090163 &nbsp;&nbsp;|&nbsp;&nbsp;
+            沪公网安备：31011502002167
+        </p>
+
+        <p class="ftft4">©2017 BLIZZARD ENTERTAINMENT, INC. </p>
+        <ul>
+            <li class="fl"><a href="#"><img src="img/footer-icon-cyberpolice.gif" alt=""/></a></li>
+            <li class="fl"><a href="#"><img src="img/footer-icon-zx100.gif" alt=""/></a></li>
+            <li class="fl"><a href="#"><img src="img/footer-icon-sgs.gif" alt=""/></a></li>
+            <li class="fl"><a href="#"><img src="img/footer-icon-shjbzx.gif" alt=""/></a></li>
+        </ul>
+    <!--</div>-->
+</body>
+</html>

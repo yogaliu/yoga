@@ -1,0 +1,439 @@
+body {
+    background: #0f2a48 url("../img/bnet-background-1920-4369eed45c.jpg") no-repeat center -200px;
+}
+
+/* top b*/
+.top {
+    padding: 0 20px;
+    height: 60px;
+    position: relative;
+    z-index: 1000;
+}
+
+.top .left {
+    margin-left: -10px;
+    height: 60px;
+    /*overflow: hidden;*/
+}
+
+.top .logo > a {
+    display: inline-block;
+    width: 62px;
+    height: 60px;
+    background: url("../img/logo-bnet-8fe40cc42c.png") no-repeat -5px -5px;
+}
+
+.top .logo > a:hover {
+    background: url("../img/logo-bnet-8fe40cc42c.png") no-repeat -5px -75px;
+}
+
+.game {
+    position: relative;
+    margin-left: 8px;
+    overflow: hidden;
+}
+
+.game > a {
+    display: inline-block;
+    width: 40px;
+    font: normal 20px/56px "microsoft yahei";
+    padding: 0 20px;
+    color: rgba(255, 255, 255, .7);
+    position: relative;
+    z-index: 1;
+}
+
+.game > a:hover {
+    color: #FFFFFF;
+}
+
+.xuanze {
+    position: absolute;
+    width: 360px;
+    height: 232px;
+    border: 1px solid #000;
+    background-color: #272e3b;
+    z-index: 1000;
+}
+
+.xuanze li {
+    float: left;
+}
+
+.xuanze li i {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-left: 22px;
+    margin-top: 5px;
+}
+
+.xuanze li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font: normal 13px/15px "microsoft yahei";
+    text-align: center;
+}
+
+.xuanze li a:hover {
+    color: #FFFFFF;
+}
+
+.xuanze .one {
+    width: 119px;
+    height: 115px;
+    border-right: 1px solid #3d434f;
+    border-bottom: 1px solid #3d434f;
+}
+
+.xuanze .two {
+    width: 120px;
+    height: 115px;
+    border-bottom: 1px solid #3d434f;
+}
+
+.xuanze .three {
+    width: 119px;
+    height: 116px;
+    border-right: 1px solid #3d434f;
+}
+
+.xuanze .four1 {
+    width: 120px;
+    height: 116px;
+}
+
+.iconx {
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    background: url("../img/sprite-16-white-47a78447b0.png") no-repeat -66px -260px;
+    margin-left: -14px;
+    /*vertical-align: middle;*/
+    opacity: 0.4;
+}
+
+.market {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 10px #fff, 0 -6px 10px rgba(255, 255, 255, .3), 0 6px 10px rgba(255, 255, 255, .3);
+    cursor: pointer;
+    font: normal 20px/56px "microsoft yahei";
+    padding: 0 20px;
+    transition: text-shadow 160ms ease, color 160ms ease;
+
+}
+
+.top .right {
+    position: relative;
+}
+
+.top .right a {
+    display: inline-block;
+    padding: 0 21px;
+    font: normal 17px/56px "microsoft yahei";
+    color: rgba(255, 255, 255, .7);
+    position: relative;
+    z-index: 1;
+}
+
+.top .right a:hover {
+    color: #FFFFFF;
+}
+
+/*top end*/
+.top2 {
+    border-bottom: 1px solid #245074;
+    border-top: 1px solid #2E597C;
+    font: normal 13px/20px "microsoft yahei";
+    color: rgba(255, 255, 255, 1);
+    height: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.top2 i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../img/sprite-16-blue-b61396910e.png") no-repeat -16px -16px;
+    margin-top: 12px;
+    margin-left: 2px;
+    float: left;
+}
+
+.top2 span {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+/* lunbo b*/
+.lun {
+    position: relative;
+    height: 300px;
+}
+.lun li {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.arrow {
+    position: relative;
+    padding: 0 40px;
+    z-index: 99;
+    display: none;
+}
+.arrow .left i {
+    display: inline-block;
+    width: 40px;
+    height: 70px;
+    background: url("../img/arrow.png") no-repeat 0 0;
+}
+.arrow .right i {
+    display: inline-block;
+    width: 40px;
+    height: 70px;
+    background: url("../img/arrow.png") no-repeat -40px 0;
+}
+.arrow .left {
+    position: absolute;
+    top: 115px;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    cursor: pointer;
+}
+.arrow .left:hover{
+    background-color: rgba(0, 174, 255, .8);
+}
+.arrow .right {
+    position: absolute;
+    top: 115px;
+    right: 0;
+    background-color: rgba(0,0,0,.7);
+    cursor: pointer;
+}
+.arrow .right:hover {
+    background-color: rgba(0, 174, 255, .8);
+}
+.ull1 {
+    background-color: #000;
+}
+.ull2 {
+    background-color: #000;
+}
+.ull3 {
+    background-color: #021627;
+}
+.ull4 {
+    background-color: #131910;
+}
+.ull5 {
+    background-color: #012112;
+}
+.ull6 {
+    background-color: #311507;
+}
+.ull7 {
+    background-color: #020d18;
+}
+/* lunbo e*/
+
+/*  content b*/
+.content {
+    margin-top: 40px;
+}
+.gtypes {
+    width: 235px;
+    height: 558px;
+    border: 1px solid #29425D;
+    background-color: hsla(0,0%,100%,.04);
+}
+.props {
+    height: 1125px;
+    width: 860px;
+}
+.gtypes ul li{
+    border-bottom: 1px solid #29425D;
+}
+.gtypes ul li:hover{
+    background-color: #078DD1;
+}
+.gtypes ul a {
+    display: block;
+    width: 235px;
+    font: 300 15px/49px "microsoft yahei";
+    color: #FFFFFF;
+}
+.gtypes ul li i{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.gtypes ul li span{
+    color: #8FA4B4;
+    font-size: 13px;
+}
+.gtypes ol {
+    margin-top: 15px;
+}
+.gtypes ol li a {
+    display: block;
+    width: 220px;
+    font: 300 13px/36px "microsoft yahei";
+    color: hsla(0,0%,100%,.8);
+    padding-left: 15px;
+}
+.gtypes ol li a:hover{
+    color: #F2F2F2;
+}
+.gtypes ol i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../img/sprite-16-blue-b61396910e.png") no-repeat -144px -64px;
+    vertical-align: middle;
+}
+.props li {
+    float: left;
+    width: 260px;
+    padding: 0 13px;
+    height: 261px;
+    margin-bottom: 20px;
+}
+.props li a{
+    display: inline-block;
+    width: 268px;
+    height: 261px;
+    border: 1px solid black;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+.props li a:hover{
+    opacity: 1;
+}
+.props .wowblue {
+    color: #00aeff;
+    display: block;
+    font: 300 14px/30px "microsoft yahei";
+    /*margin-top: 10px;*/
+    padding-left: 20px;
+
+}
+.props p {
+    display: block;
+    height: 70px;
+    font: 300 14px/30px "microsoft yahei";
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.props li a img {
+    width: 268px;
+    height: 151px;
+}
+
+/*  content e*/
+
+
+/* foot*/
+.footer {
+    height: 430px;
+    padding: 0 40px;
+}
+
+.footer a:hover {
+    color: #FFFFFF;
+}
+
+.fttop {
+    margin-top: 50px;
+    height: 20px;
+    margin-bottom: 40px;
+}
+
+.fttop i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.ftt1 {
+    background: url("../img/sprite-24-blue.png") no-repeat -98px -2px;
+}
+
+.ftt2 {
+    background: url("../img/sprite-24-blue.png") no-repeat -147px -26px;
+}
+
+.ftt3 {
+    background: url("../img/sprite-24-blue.png") no-repeat -122px -434px;
+}
+
+.fttop a {
+    margin-left: 10px;
+    font-family: "microsoft yahei";
+    margin-right: 20px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.ftft {
+    margin-left: 25px;
+}
+
+.ftft1 {
+    line-height: 40px;
+    font-size: 13px;
+
+}
+
+.ftft1 a {
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: "microsoft yahei";
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ftft2 {
+    font-size: 13px;
+    line-height: 30px;
+}
+
+.ftft2 a {
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: "microsoft yahei";
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ftft3 {
+    line-height: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: "microsoft yahei";
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ftft4 {
+    line-height: 30px;
+}
+
+.ftft ul {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.ftft li {
+    margin-left: 20px;
+}

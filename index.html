@@ -1,108 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>栋球帝</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="Shortcut Icon" href="img/images/fanico.ico" type="image/x-icon">
-    <script src="js/index.js" defer='defer'></script>
+    <title>官网</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <!-- header -->
     <div class="header clearfix">
-        <div class="typePage clearfix">
-            <div class="header-bottom-left fl">
-                <a href="javascript:" class="logo fl"></a>
-                <h1 class="fl"><a href="#">Kindom</a></h1>
-            </div>
-            <ul class="header-nav fl">
-                <li class="index-style"><a href="index.html">首页</a></li>
-                <li><a href="basketball.html">篮球</a><span></span></li>
-                <li><a href="football.html">足球</a><span></span></li>
-                <li><a href="music.html">音乐</a><span></span></li>
-                <li><a href="许愿墙/yoga.html">博客</a></li>
+        <div class="header-l fl">
+            <a href="#"><i class="battle fl"></i></a>
+            <div class="game fl" id="game">
+                <a href="#" class="light">游戏</a>
+                <i class="drop"></i>
+                <ul class="xuanze" id="xiaotu">
+                <li class="one"><a href="#"><i></i>《魔兽世界®》</a></li>
+                <li class="one"><a href="#"><i></i>《暗黑破坏神®III》</a></li>
+                <li class="two"><a href="#"><i></i>《星际争霸®II》</a></li>
+                <li class="three"><a href="#"><i></i>《炉石传说®》</a></li>
+                <li class="three"><a href="#"><i></i>《风暴英雄™》</a></li>
+                <li class="four1"><a href="#"><i></i>《守望先锋™》</a></li>
             </ul>
-            <div class="header-bottom-right fr">
-                <input type="text" class="search-text fl" placeholder="搜索你想要的">
-                <div class="search-btn fl"></div>
+            </div>
+            <div class="shop fl">
+                <a href="#">商城</a>
             </div>
         </div>
-        <div class="header-top"></div>
+        <div class="header-r fr">
+            <div class="sup fl">
+                <a href="#">支持</a>
+            </div>
+            <div class="sign fl">
+                <a href="#">你的通行证</a>
+                <i class="drop"></i>
+            </div>
+        </div>
     </div>
+    <script>
+    var ull = document.getElementById("xiaotu");
+    var game = document.getElementById("game");
+    var iss = ull.getElementsByTagName("i");
+    for (var i = 0; i < iss.length; i++) {
+        iss[i].style.background = "url('img/game-icons-70-fb0e2d3864.png') no-repeat -" + i * 70 + "px 0";
+//        console.log(iss[i].style.background);
+        
+    }
+    game.onclick = function (e) {
+        if (game.style.overflow == "visible") {
+            game.style.overflow = "hidden";
+        } else {
+            game.style.overflow = "visible";
+        }
+        e.stopPropagation()
+    };
+    document.onclick=function(){
+    game.style.overflow = "hidden";
+    }
+</script>
     <!-- body -->
-    <div class="content" id="content">
-        <div class="typePage">
-            <div class="banner">
-                <a href=""><img class="banner-img" src="img/kobe.jpg"></a>
-                <div class="banner-text-box">
-                    <div class="banner-text"></div>
-                    <h3><a href="#">科比·布莱恩特</a></h3>
-                    <p><a href="#">不朽的传奇</a></p>
+    <div class="body">
+        <video class="video-bg video-1" loop="loop" src="W7QEQTZOZXOF1484356611948.mp4" autoplay>
+        </video>
+        <div class="ad">
+        <!-- 广告栏 -->
+            <h2>暗夜要塞的战斗正式打响</h2>
+            <p>联军终于突破了古尔丹的防线！攻入暗夜要塞，对抗十名强大的首领，解放苏拉玛！</p>
+            <div class="btn">
+                <div class="bnt-1 btn-bg">了解更多</div>
+                <div class="bnt-2 btn-bg">立即充值</div>
+            </div>
+        </div>
+        <div class="news">
+            <h2>新闻及更新<a href="#">查看所有新闻</a></h2>
+        </div>
+        <div class="news-link clearfix">
+            <div class="link-box fl">
+                <div class="link-wrap">
+
+                    <div>
+                        <div class="wrap-img"><img src="img/29MQH9DVENJL1477539853746.jpg" alt=""/></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">February 16th, 2017</h2>
+                            <p class="mes-2">假日活动：《军团再临》地下城</p>
+                        </div>
+
+                    <a href="#"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="link-box fl">
+                <div class="link-wrap">
+
+                    <div>
+                        <div class="wrap-img"><img src="img/AQK7AYYQDDSQ1485150447868.jpg" alt=""/></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">February 16th, 2017</h2>
+                            <p class="mes-2">《魔兽世界》2017春节特惠活动</p>
+                        </div>
+
+                        <a href="#"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="link-box fl">
+                <div class="link-wrap">
+
+                    <div>
+                        <div class="wrap-img"><img src="img/DQTB221SZYO41485334215137.jpg" alt=""/></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">February 16th, 2017</h2>
+                            <p class="mes-2">假日活动：《大地的裂变》时光漫游</p>
+                        </div>
+
+                        <a href="#"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="link-box fl">
+                <div class="link-wrap">
+
+                    <div>
+                        <div class="wrap-img"><img src="img/OX7KGOFC2A8S1484893691881.jpg" alt=""/></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">February 16th, 2017</h2>
+                            <p class="mes-2">假日活动：《大地的裂变》时光漫游</p>
+                        </div>
+
+                        <a href="#"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="big player clearfix">
+            <div class="link-box fl">
+                <div class="link-wrap one">
+                    <div>
+                        <div class="wrap-img img-1"></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">魔兽世界是什么？</h2>
+                            <p class="mes-2">新玩家入门</p>
+                        </div>
+                        <a href="#"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="link-box fl">
+                <div class="link-wrap two">
+                    <div>
+                        <div class="wrap-img img-2"></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">魔兽世界是什么？</h2>
+                            <p class="mes-2">新玩家入门</p>
+                        </div>
+                        <a href="#"></a>
+                    </div>
                 </div>
             </div>
-            <div class="container clearfix">
-                <!-- warp1 -->
-                <div class="warp clearfix">
-                 <i class="icon-close"></i>
-                    <a href=""><img src="img/wade.jpg" class="warp-img fl"></a>
-                    <div class="warp-r fl clearfix">
-                   
-                        <h3><a href="#" class="type">作品展示</a><a href="#">让自行车站在墙上，生活中的交互设计｜这个设计了不起</a></h3>
-                        <ul class="fl">
-                            <li><span class="icon1"></span>2016-01-01</li>
-                            <li><span class="icon2"></span><a href="#">栋球帝</a></li>
-                            <li><span class="icon3"></span>阅读(780)</li>
-                            <li><span class="icon4"></span><a href="#">评论(125)</a></li>
-                        </ul>
-                        <p><a href="">每年这个季节都盼着来自北方的冷空气能早些把这个城市吹干、吹冷。这世上，又湿又温暖的地方未必都是好地方。
-                        随着Daydream头显和Pixel手机的发布上市，Google官方的各路VR app也陆续上线。我个人还没有机会、没有设备进行体验，见...</a></p>
+            </div>
+            <div class="cross cross-2">
+                <h3 class="ar">7.1.5版本生存指南</h3>
+                <p class="ar">你在这里可以了解到7.1.5版本中新增的时空漫游、多元化的小节目</p>
+                <div class="cross-bg">
+
+                </div>
+                <div class="bnt-1 btn-bg">了解更多</div>
+            </div>
+        <div class="big update clearfix">
+            <div class="link-box fl">
+                <div class="link-wrap one">
+                    <div>
+                        <div class="wrap-img img-1"></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">魔兽世界是什么？</h2>
+                            <p class="mes-2">新玩家入门</p>
+                        </div>
+                        <a href="#"></a>
                     </div>
                 </div>
-                <!-- warp2 -->
-                <div class="warp clearfix">
-                 <i class="icon-close"></i>
-                    <a href=""><img src="img/dengken.jpg" class="warp-img fl"></a>
-                    <div class="warp-r fl clearfix">
-                    
-                        <h3><a href="#" class="type">作品展示</a><a href="#">让自行车站在墙上，生活中的交互设计｜这个设计了不起</a></h3>
-                        <ul class="fl">
-                            <li><span class="icon1"></span>2016-01-01</li>
-                            <li><span class="icon2"></span><a href="#">栋球帝</a></li>
-                            <li><span class="icon3"></span>阅读(780)</li>
-                            <li><span class="icon4"></span><a href="#">评论(125)</a></li>
-                        </ul>
-                        <p><a href="">每年这个季节都盼着来自北方的冷空气能早些把这个城市吹干、吹冷。这世上，又湿又温暖的地方未必都是好地方。
-                        随着Daydream头显和Pixel手机的发布上市，Google官方的各路VR app也陆续上线。我个人还没有机会、没有设备进行体验，见...</a></p>
-                    </div>
-                </div>
-                <!-- warp3 -->
-                <div class="warp clearfix">
-                    <a href="#"><img src="img/maidi.jpg" class="warp-img fl"></a>
-                    <i class="icon-close"></i>
-                    <div class="warp-r fl clearfix">                      
-                        <h3><a href="#" class="type">作品展示</a><a href="#" >让自行车站在墙上，生活中的交互设计｜这个设计了不起</a></h3>
-                        <ul class="fl">
-                            <li><span class="icon1"></span>2016-01-01</li>
-                            <li><span class="icon2"></span><a href="#">栋球帝</a></li>
-            <li><span class="icon3"></span>阅读(780)</li>
-                            <li><span class="icon4"></span><a href="#">评论(125)</a></li>
-                        </ul>
-                        <p><a href="">每年这个季节都盼着来自北方的冷空气能早些把这个城市吹干、吹冷。这世上，又湿又温暖的地方未必都是好地方。
-                        随着Daydream头显和Pixel手机的发布上市，Google官方的各路VR app也陆续上线。我个人还没有机会、没有设备进行体验，见...</a></p>
+            </div>
+            <div class="link-box fl">
+                <div class="link-wrap two">
+                    <div>
+                        <div class="wrap-img img-2"></div>
+                        <div class="wrap-mes">
+                            <h2 class="mes-1">魔兽世界是什么？</h2>
+                            <p class="mes-2">新玩家入门</p>
+                        </div>
+                        <a href="#"></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<div class="footer">
-     <input type="text" class="text-title" id="text-title" >
-    <textarea id="text-content"></textarea>
-    <input type="button" value="提交" class="text-btn" id="text-btn">
-</div>
-</body>
-<script>
+        <div class="cross cross-3 clearfix">
+            <h3 class="al">7.1.5版本生存指南</h3>
+            <p class="al">你在这里可以了解到7.1.5版本中新增的时空漫游、多元化的小节目</p>
+            <div class="cross-bg">
+            </div>
+            <div class="bnt-1 btn-bg">了解更多</div>
+        </div>
+        <div class="video-bg video-2">
+            <video class="video-bg" loop="loop" src="YY3P4V0M97261473401753110.mp4" autoplay></video>
+            <div class="ad">
+                <!-- 广告栏 -->
+                <h2>暗夜要塞的战斗正式打响</h2>
+                <p>联军终于突破了古尔丹的防线！攻入暗夜要塞，对抗十名强大的首领，解放苏拉玛！</p>
+                <div class="btn">
+                    <div class="bnt-1 btn-bg">了解更多</div>
+                    <div class="bnt-2 btn-bg">立即充值</div>
+                </div>
+            </div>
+        </div>
+        <div class="fans">
+            <h3>关注魔兽</h3>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
 
+        <div class="wow-menu" id="menu">
+            <!-- 滚动栏 -->
+            <div class="wow-menu-l fl clearfix">
+                <div class="logo fl h">
+                    <div class="bg-big" id="bg-big"></div>
+                    <a class="bg-small" id="bg-small"></a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+
+                <div class="game fl h">
+                    <a href="#" class="lh">游戏
+                        <i class="drop"></i>
+                    </a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+                <div class="stroy fl h">
+                    <a href="#" class="lh">剧情故事
+                        <i class="drop"></i>
+                    </a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+                <div class="news-btn fl h">
+                    <a href="#" class="lh">新闻
+                    </a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+                <div class="bbs fl h">
+                    <a href="#" class="lh">论坛
+                    </a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+                <div class="service fl h">
+                    <a href="#" class="lh">服务
+                    </a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+            </div>
+            <div class="wow-menu-r fr clearfix">
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+                <div class="search fl h">
+                    <a href="#" class="lh">
+                        <i></i>
+                    </a>
+                </div>
+                <b class="fl one"></b>
+                <b class="fl two"></b>
+                <div class="signin fl h">
+                    <a href="#" class="lh">
+                        登陆
+                    </a>
+                </div>
+                <div class="free fl h">
+                    <a href="#" class="lh">免费体验
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="btm">
+        <div class="btmContent">
+            <div class="btmTopCot">
+                <div class="btcService">
+                    <div class="leftSvc">
+                        <ul>
+                            <li><a href="#"><i class="lsIcon1"></i>在线客服</a></li>
+                            <li><a href="#"><i class="lsIcon2"></i>反馈</a></li>
+                            <li><a href="#"><i class="lsIcon3"></i>加入我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="rightBrand fr">
+                        <strong>合作品牌 ：</strong>
+                        <a href="#"><i class="rbIcon1"></i></a>
+                        <a href="#"><i class="rbIcon2"></i></a>
+                        <a href="#"><i></i></a>
+                    </div>
+                </div>
+                <div class="wyLog por ">
+                    <div class="log por">
+                        <a href="#"></a>
+                    </div>
+                    <div class="neLog poa"></div>
+                    <div class="law">
+                        <a href="#">隐私</a>&nbsp;|
+                        &nbsp;<a href="#">法律条款</a>&nbsp;|
+                        &nbsp;<a href="#">API</a> <br/>
+                        <span>©2016 暴雪娱乐股份有限公司版权所有 由上海网之易网络科技发展有限公司运营 著作权侵权 新出审字：[2014]1451号</span>  <br/>
+                        <span>文网进字[2014]0116号 沪网文[2014]0731-161号 增值电信业务经营许可证编号：沪B2－20080012</span> <br/>
+                        <span>互联网违法和不良信息举报电话：0571-28090163</span> <br/>
+                        <ul>
+                            <li><i class="lawIcon1"></i></li>
+                            <li><i class="lawIcon2"></i></li>
+                            <li><i class="lawIcon3"></i></li>
+                            <li><i class="lawIcon4"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="btmBelowCot">
+                <span>积极健康的游戏心态是健康游戏的开端，本游戏故事情节设置紧凑，请您合理控制游戏时间，避免沉溺游戏影响生活，注意自我保护，防范网络陷阱。</span> <br/>
+                <span>健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+
+   var menu = document.getElementById("menu");
+   var bgBig= document.getElementById("bg-big");
+   var bgSmall= document.getElementById("bg-small");
+   var lhs=menu.getElementsByClassName("lh");
+   var body=document.getElementsByTagName("body")[0];
+   var menuWidth=menu.offsetWidth;
+   var menuLeft=menu.offsetLeft;
+   var menuTop=menu.offsetTop;
+   var timer=null;
+   window.onresize=function(){
+       clearTimeout(timer);
+       menuLeft=parseInt(body.offsetWidth*0.08);
+       menuWidth=parseInt(body.offsetWidth*0.9);
+       timer=setTimeout(function(){
+        window.onscroll()
+       },15)
+   };
+   window.onscroll=function () {
+        if(window.scroll().top>80){
+        animate(menu,{"width":body.offsetWidth,"left":0,"height":50},function(){clearInterval(timer)}); //清除自适应行高的定时器
+        animate(bgBig,{opacity:"0"},function(){
+            bgBig.style.display="none";
+        });
+        animate(bgSmall,{"padding-right":0});
+            menu.style.position="fixed";
+            menu.style.top="0";
+    }
+    else{
+        animate(menu,{"width":menuWidth,"left":menuLeft,height:80},function(){clearInterval(timer)});
+        animate(bgSmall,{"padding-right":145});
+        animate(bgBig,{opacity:"1"});
+            menu.style.position="absolute";
+            menu.style.top=menuTop+"px";
+            bgBig.style.display="block";
+
+    }
+        var timer=setInterval(function(){
+        for (var i = 0; i < lhs.length; i++) {
+       lhs[i].style.lineHeight=lhs[i].offsetHeight+"px";
+   }
+},15);
+    };
+   
+   function scroll() {
+       return {
+           top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+           left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+       };
+   }
+   /**
+    * 缓动函数
+    * @param obj
+    * @param json
+    * @param fn
+    */
+   function animate(obj,json,fn){
+       clearInterval(obj.timer); //清除定时器
+       obj.timer=setInterval(function(){
+           var flag=true;
+           for(var k in json){
+               if(k==="opacity"){
+                   var leader=getStyle(obj,k);
+                   var step=(json[k]*100-leader*100)/5;
+                   step=step>0?Math.ceil(step):Math.floor(step);
+                   obj.style[k]=(leader*100+step)/100;
+               }
+               else if(k==="zIndex"){
+                   obj.style[k]=json[k];
+               }
+               else{
+                   var leader=parseInt(getStyle(obj,k));//获取初始
+                   var step=(json[k]-leader)/5;
+                   step=step>0?Math.ceil(step):Math.floor(step);
+                   obj.style[k]=(leader+step)+"px";
+               }
+               if(leader !== json[k]){
+                   flag=false;
+               }
+               if (flag) {
+                   clearInterval(obj.timer);
+                   if(fn){
+                       fn()
+                   }
+               }
+           }
+       },15)
+   }
+
+
+   /**
+    * 获取样式
+    * @param obj
+    * @param attr
+    * @returns {*}
+    */
+   function getStyle(obj, attr) {
+       if (window.getComputedStyle) {
+           return window.getComputedStyle(obj, null)[attr];
+       } else {
+           return obj.currentStyle[attr];
+       }
+   }
 </script>
 </html>
